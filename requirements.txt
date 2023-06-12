@@ -1,0 +1,4 @@
+hvplot
+jupyterlab
+openpyxl
+pyparsing
