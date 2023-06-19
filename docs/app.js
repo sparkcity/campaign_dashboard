@@ -55,11 +55,14 @@ import plotly.express as px
 import plotly.io as pio
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import os
 
 pn.extension('tabulator')
 pn.extension()
 pn.extension("plotly")
 pio.renderers.default='iframe'
+
+print(os.getcwd())
 
 pc_combat_stats_df = pd.DataFrame(pd.read_excel('starbound_data.xlsx',
                                                 sheet_name='pc_combat_stats'))
