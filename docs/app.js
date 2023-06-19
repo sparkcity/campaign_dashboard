@@ -64,7 +64,7 @@ pio.renderers.default='iframe'
 
 print(os.getcwd())
 print('attempting to list directory pyodide')
-p = os.listdir('pyodide')
+p = os.listdir('//home//pyodide')
 print(p)
 print('attempting to list directory home')
 dir_list = os.listdir('./home')
