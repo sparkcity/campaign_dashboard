@@ -60,6 +60,7 @@ from plotly.subplots import make_subplots
 
 pn.extension('tabulator')
 pn.extension()
+pn.extension("plotly")
 pio.renderers.default='iframe'
 
 pc_combat_stats_df = pd.DataFrame(pd.read_excel('data/starbound_data.xlsx',
