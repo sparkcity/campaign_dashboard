@@ -63,6 +63,10 @@ pn.extension("plotly")
 pio.renderers.default='iframe'
 
 print(os.getcwd())
+print('attempting to list directory pyodide')
+p = os.listdir('pyodide')
+print(p)
+print('attempting to list directory home')
 dir_list = os.listdir('./home')
 print(dir_list)
 
