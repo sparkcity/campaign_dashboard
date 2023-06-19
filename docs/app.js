@@ -15,7 +15,7 @@ async function startApplication() {
   self.pyodide.globals.set("sendPatch", sendPatch);
   console.log("Loaded!");
   await self.pyodide.loadPackage("micropip");
-  const env_spec = ['markdown-it-py<3', 'https://cdn.holoviz.org/panel/1.1.0/dist/wheels/bokeh-3.1.1-py3-none-any.whl', 'https://cdn.holoviz.org/panel/1.1.0/dist/wheels/panel-1.1.0-py3-none-any.whl', 'pyodide-http==0.2.1', 'numpy', 'pandas', 'plotly']
+  const env_spec = ['markdown-it-py<3', 'https://cdn.holoviz.org/panel/1.1.0/dist/wheels/bokeh-3.1.1-py3-none-any.whl', 'https://cdn.holoviz.org/panel/1.1.0/dist/wheels/panel-1.1.0-py3-none-any.whl', 'pyodide-http==0.2.1', 'os', 'pandas', 'plotly']
   for (const pkg of env_spec) {
     let pkg_name;
     if (pkg.endsWith('.whl')) {
@@ -49,12 +49,10 @@ init_doc()
 
 #Imports and Initializations
 import pandas as pd
-import numpy as np
 import panel as pn
 import plotly.express as px
 import plotly.io as pio
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import os
 
 pn.extension('tabulator')
@@ -62,12 +60,8 @@ pn.extension()
 pn.extension("plotly")
 pio.renderers.default='iframe'
 
-pc_combat_stats_df = pd.DataFrame(pd.read_excel('../docs/starbound_data.xlsx',
-                                                sheet_name='pc_combat_stats'))
-
-pc_rolls_df = pd.DataFrame(pd.read_excel('../docs/starbound_data.xlsx',
-                                         sheet_name='pc_rolls'))
-
+pc_combat_stats_df = pd.DataFrame(pd.read_csv('https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pc_combat_stats.csv'))
+pc_rolls_df = pd.DataFrame(pd.read_csv('https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pc_rolls.csv'))
 
 pc_color_map = {'Sparrow':'#118ab2',
                 'Madaine':'#073b4c',
@@ -183,7 +177,7 @@ pv7_fig = px.line(pc_combat_stats_df,
 template = pn.template.FastListTemplate(
     title="Campaign Roll Statistics", 
     sidebar=[pn.pane.Markdown("Dashboard"), 
-             pn.pane.PNG('img/thorns_logo.png', sizing_mode='scale_both'),
+             pn.pane.PNG('https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/img/thorns_logo.png', sizing_mode='scale_both'),
              pn.pane.Markdown(f"""Party: The Rose's Thorns
              <br/>Earliest Session Data Available: {sess_min}
              <br/>Latest Session Data Available: {sess_max}""")
