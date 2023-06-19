@@ -1,0 +1,11 @@
+﻿session,pc,level,dmg_taken,dmg_healed,dmg_dealt,dmg_mitigated,combat_id,atks_success,atks_fail,spells_cast,final_blows,combat_blurb
+41,Sparrow,9,2,0,41,23,41-1,1,1,0,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
+41,Pollux,9,0,0,0,0,41-1,0,0,2,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
+41,Madaine,9,0,0,0,0,41-1,0,0,0,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
+41,Trey,9,40,0,42,0,41-1,2,0,2,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
+41,Evelyn,9,20,12,20,0,41-1,0,2,1,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
+42,Sparrow,9,22,0,89,15,42-1,6,2,0,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
+42,Pollux,9,31,0,94,0,42-1,2,1,0,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
+42,Madaine,9,55,31,62,0,42-1,1,0,4,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
+42,Trey,9,104,10,22,0,42-1,2,0,2,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
+42,Evelyn,9,45,32,62,0,42-1,6,0,2,2,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
