@@ -68,6 +68,10 @@ os.chdir('../')
 print(os.getcwd())
 dir_list = os.listdir(os.getcwd())
 print(dir_list)
+os.chdir('/web_user')
+print(os.getcwd())
+wu = os.listdir(os.getcwd())
+print(wu)
 
 pc_combat_stats_df = pd.DataFrame(pd.read_excel('../docs/starbound_data.xlsx',
                                                 sheet_name='pc_combat_stats'))
