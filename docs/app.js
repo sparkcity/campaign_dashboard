@@ -63,12 +63,13 @@ pn.extension("plotly")
 pio.renderers.default='iframe'
 
 print(os.getcwd())
-os.chdir(os.path.dirname(os.path.abspath('starbound_data.xlsx')))
+dir_list = os.listdir('home')
+print(dir_list)
 
-pc_combat_stats_df = pd.DataFrame(pd.read_excel('starbound_data.xlsx',
+pc_combat_stats_df = pd.DataFrame(pd.read_excel('../docs/starbound_data.xlsx',
                                                 sheet_name='pc_combat_stats'))
 
-pc_rolls_df = pd.DataFrame(pd.read_excel('starbound_data.xlsx',
+pc_rolls_df = pd.DataFrame(pd.read_excel('../docs/starbound_data.xlsx',
                                          sheet_name='pc_rolls'))
 
 pc_color_map = {'Sparrow':'#118ab2',
