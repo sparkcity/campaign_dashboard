@@ -130,7 +130,7 @@ pv7_fig = px.line(pc_combat_stats_df,
 # Layout Template
 
 template = pn.template.FastListTemplate(
-    title='Rose\'s Thorns Roll Statistics', 
+    title="Rose's Thorns Roll Statistics", 
     sidebar=[pn.pane.Markdown("Dashboard"), 
              pn.pane.PNG('img/thorns_logo.png', sizing_mode='scale_both'),
              pn.pane.Markdown(f"""Earliest Session Data Available: {sess_min}
