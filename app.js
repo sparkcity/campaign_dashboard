@@ -179,10 +179,11 @@ pv7_fig = px.line(pc_combat_stats_df,
 # Layout Template
 
 template = pn.template.FastListTemplate(
-    title="Rose's Thorns Roll Statistics", 
+    title="Campaign Roll Statistics", 
     sidebar=[pn.pane.Markdown("Dashboard"), 
              pn.pane.PNG('img/thorns_logo.png', sizing_mode='scale_both'),
-             pn.pane.Markdown(f"""Earliest Session Data Available: {sess_min}
+             pn.pane.Markdown(f"""Party: The Rose's Thorns
+             <br/>Earliest Session Data Available: {sess_min}
              <br/>Latest Session Data Available: {sess_max}""")
              ],
     main=[pn.Row(pv2_fig,pv1_fig),
