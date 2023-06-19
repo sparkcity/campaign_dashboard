@@ -63,11 +63,10 @@ pn.extension("plotly")
 pio.renderers.default='iframe'
 
 print(os.getcwd())
-print('attempting to list directory pyodide')
-p = os.listdir('//home//pyodide')
-print(p)
-print('attempting to list directory home')
-dir_list = os.listdir('./home')
+print('attempting to change directory to home')
+os.chdir('../')
+print(os.getcwd())
+dir_list = os.listdir(os.getcwd())
 print(dir_list)
 
 pc_combat_stats_df = pd.DataFrame(pd.read_excel('../docs/starbound_data.xlsx',
