@@ -63,7 +63,7 @@ pn.extension("plotly")
 pio.renderers.default='iframe'
 
 print(os.getcwd())
-dir_list = os.listdir('home')
+dir_list = os.listdir('./home')
 print(dir_list)
 
 pc_combat_stats_df = pd.DataFrame(pd.read_excel('../docs/starbound_data.xlsx',
