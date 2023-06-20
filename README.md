@@ -5,7 +5,7 @@ Live: https://sparkcity.github.io/campaign_dashboard/app.html
 
 A dashboard webapp built to display overall statistics related to the ongoing Dungeons & Dragons campaign play in with my friends.
 
-
+![Screenshot](https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/img/dashboard_ss.png)
 
 # Datasets
 
