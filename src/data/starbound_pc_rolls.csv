@@ -125,3 +125,19 @@ Sparrow,42,Check,Social,Insight,null,11,19
 Evelyn,42,Check,Social,Insight,null,17,26
 Pollux,42,Check,Social,Insight,null,20,21
 Trey,42,Check,Social,Insight,null,15,16
+Madaine,43,Check,Social,History,null,15,24
+Madaine,43,Check,Social,Deception,null,15,28
+Pollux,43,Check,Social,Arcana,null,2,15
+Pollux,43,Check,Social,Sleight of Hand,null,18,30
+Madaine,43,Check,Social,Arcana,null,4,8
+Madaine,43,Check,Social,Deception,null,1,14
+Pollux,43,Check,Social,Insight,null,6,7
+Trey,43,Check,Exploration,Arcana,null,20,27
+Pollux,43,Save,Exploration,null,Constitution,2,5
+Trey,43,Save,Exploration,null,Constitution,1,8
+Sparrow,43,Save,Exploration,null,Constitution,18,21
+Evelyn,43,Save,Exploration,null,Constitution,5,6
+Madaine,43,Save,Exploration,null,Constitution,10,14
+Pollux,43,Check,Exploration,History,null,1,16
+Pollux,43,Check,Exploration,Investigation,null,18,27
+Evelyn,43,Check,Exploration,Investigation,null,12,20
