@@ -23,7 +23,7 @@ SUCCESS_SOLID_BUTTON_STYLE = f"""
 
 pn.extension("plotly", "tabulator", sizing_mode="stretch_width")
 
-# pio.renderers.default = "iframe"
+pio.renderers.default = "iframe"
 
 pc_combat_stats_df = pd.DataFrame(
     pd.read_csv(
