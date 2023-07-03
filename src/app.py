@@ -1,145 +1,163 @@
-#Imports and Initializations
+################################# Imports and Initializations
+
 import pandas as pd
+import numpy as np
 import panel as pn
 import plotly.express as px
 import plotly.io as pio
 import plotly.graph_objects as go
-import os
 
-pn.extension('tabulator')
-pn.extension()
-pn.extension("plotly")
-pio.renderers.default='iframe'
+ACCENT = "#e56c6c"
 
-pc_combat_stats_df = pd.DataFrame(pd.read_csv('https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pc_combat_stats.csv'))
-pc_rolls_df = pd.DataFrame(pd.read_csv('https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pc_rolls.csv'))
+SUCCESS_SOLID_BUTTON_STYLE = f"""
+.bk-btn-success {{
+    background-color: var(--accent-foreground-rest, {ACCENT});
+}}
+.bk-active.bk-btn-success {{
+    background-color: var(--accent-foreground-active, {ACCENT});
+}}
+.bk-btn-success:hover {{
+    background-color: var(--accent-foreground-hover, {ACCENT});
+}}
+"""
 
-pc_color_map = {'Sparrow':'#118ab2',
-                'Madaine':'#073b4c',
-                'Evelyn':'#06d6a0',
-                'Pollux':'#ffd166',
-                'Trey':'#ef476f'}
+pn.extension("plotly", "tabulator", sizing_mode="stretch_width")
 
-#Party Visualization 1, 8, 9
+# pio.renderers.default = "iframe"
 
-pv1_df = pc_rolls_df.groupby(['pc','context']).size().unstack(fill_value=0).reset_index()
+pc_combat_stats_df = pd.DataFrame(
+    pd.read_csv(
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pc_combat_stats.csv"
+    )
+)
+pc_rolls_df = pd.DataFrame(
+    pd.read_csv(
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pc_rolls.csv"
+    )
+)
 
-pv1_fig = px.pie(pv1_df, values='Combat',
-                 names= 'pc', 
-                 color='pc',
-                 color_discrete_map = pc_color_map,
-                 title = 'Total Campaign Combat Rolls Per Character')
+pc_color_map = {
+    "Sparrow": "#118ab2",
+    "Madaine": "#073b4c",
+    "Evelyn": "#06d6a0",
+    "Pollux": "#ffd166",
+    "Trey": "#ef476f",
+}
 
-pv8_fig = px.pie(pv1_df, values='Exploration',
-                 names= 'pc', 
-                 color='pc',
-                 color_discrete_map = pc_color_map,
-                 title = 'Total Campaign Exploration Rolls Per Character')
+sess_min = (pc_rolls_df["session"].min()).item()
+sess_max = (pc_rolls_df["session"].max()).item()
 
-pv9_fig = px.pie(pv1_df, values='Social',
-                 names= 'pc', 
-                 color='pc',
-                 color_discrete_map = pc_color_map,
-                 title = 'Total Campaign Social Rolls Per Character')
+################################# Party Visualizations: Context and Overall Rolls
 
-#Party Visualization 2
+select_context = pn.widgets.RadioButtonGroup(
+    name="Context Selection",
+    options=["Combat", "Exploration", "Social"],
+    value="Combat",
+    button_type="success",
+    stylesheets=[SUCCESS_SOLID_BUTTON_STYLE],
+)
 
-pv2_fig = px.scatter(pc_rolls_df,
-                   y='roll_total',
-                   x='session',
-                   color='pc',
-                   color_discrete_map = pc_color_map,
-                   symbol='pc',
-                   hover_data=['type','session','pc'],
-                   title="All Rolls Per Character Across Campaign")
+
+def total_contextual_fig(cntxt):
+    pv1_df = (
+        pc_rolls_df.groupby(["pc", "context"])
+        .size()
+        .unstack(fill_value=0)
+        .reset_index()
+    )
+
+    pv1_fig = px.pie(
+        pv1_df,
+        values=cntxt,
+        names="pc",
+        color="pc",
+        color_discrete_map=pc_color_map,
+        title=f"Total Campaign-wide {cntxt} Rolls Per Character",
+    )
+    pv1_fig.update_layout(autosize=True)
+    return pv1_fig
+
+
+pv2_fig = px.scatter(
+    pc_rolls_df,
+    y="roll_total",
+    x="session",
+    color="pc",
+    color_discrete_map=pc_color_map,
+    symbol="pc",
+    hover_data=["type", "session", "pc"],
+    title="All Campaign-wide Rolls Per Character",
+)
 pv2_fig.update_layout(scattermode="group", scattergap=0.50)
 
-sess_min = (pc_rolls_df['session'].min()).item()
-sess_max = (pc_rolls_df['session'].max()).item()
+party_box = pn.WidgetBox(
+    pn.pane.Markdown(f"# Party Visualizations"),
+    select_context,
+    pn.panel(pn.bind(total_contextual_fig, select_context), margin=(10, 2, 10, 5)),
+)
 
-#Party Visualization 3, 10, 11, 12
+################################# Party Visualizations: Total Combat Stats Per Character
+select_combat_stat = pn.widgets.Select(
+    name="Combat Stat Selection",
+    options=["dmg_taken", "dmg_dealt", "dmg_mitigated", "dmg_healed"],
+    value="dmg_taken",
+)
 
-pv3_gb = pc_combat_stats_df.groupby('pc').sum().reset_index()
 
-pv3_fig = px.bar(pv3_gb,
-                 x='pc',
-                 y='dmg_taken',
-                 color='pc',
-                 color_discrete_map = pc_color_map,
-                 title='Total Damage Taken Campaign Wide Per Character')
+def total_combat_stat(cntxt):
+    gb = pc_combat_stats_df.groupby("pc").sum().reset_index()
 
-pv10_fig = px.bar(pv3_gb,
-                 x='pc',
-                 y='dmg_dealt',
-                 color='pc',
-                 color_discrete_map = pc_color_map,
-                 title='Total Damage Dealt Campaign Wide Per Character')
+    fig = px.bar(
+        gb,
+        x="pc",
+        y=cntxt,
+        color="pc",
+        color_discrete_map=pc_color_map,
+        title=f"Total Campaign-wide {cntxt} Per Character",
+    )
+    return fig
 
-pv11_fig = px.bar(pv3_gb,
-                 x='pc',
-                 y='dmg_healed',
-                 color='pc',
-                 color_discrete_map = pc_color_map,
-                 title='Total Healing Done Campaign Wide Per Character')
 
-pv12_fig = px.bar(pv3_gb,
-                 x='pc',
-                 y='dmg_mitigated',
-                 color='pc',
-                 color_discrete_map = pc_color_map,
-                 title='Total Damage Mitigated Campaign Wide Per Character')
+def total_combat_stat_per_session(cntxt):
+    fig = px.line(
+        pc_combat_stats_df,
+        x="session",
+        y=cntxt,
+        color="pc",
+        color_discrete_map=pc_color_map,
+        markers=True,
+        title=f"{cntxt} Per Character Per Session",
+    )
+    return fig
 
-# Party Visualization 4 - 7
 
-pv4_fig = px.line(pc_combat_stats_df,
-                  x='session',
-                  y='dmg_dealt',
-                  color='pc',
-                  color_discrete_map = pc_color_map,
-                  markers=True,
-                  title='Total Damage Dealt Per Character Per Session')
+party_combat_box = pn.WidgetBox(
+    pn.Row(pn.pane.Markdown(f"# Party Combat Visualizations")),
+    pn.Row(select_combat_stat),
+    pn.Row(
+        pn.bind(total_combat_stat, select_combat_stat),
+        pn.bind(total_combat_stat_per_session, select_combat_stat),
+    ),
+)
 
-pv5_fig = px.line(pc_combat_stats_df,
-                  x='session',
-                  y='dmg_taken',
-                  color='pc',
-                  color_discrete_map = pc_color_map,
-                  markers=True,
-                  title='Total Damage Taken Per Character Per Session')
-
-pv6_fig = px.line(pc_combat_stats_df,
-                  x='session',
-                  y='dmg_mitigated',
-                  color='pc',
-                  color_discrete_map = pc_color_map,
-                  markers=True,
-                  title='Total Damage Mitigated Per Character Per Session')
-
-pv7_fig = px.line(pc_combat_stats_df,
-                  x='session',
-                  y='dmg_healed',
-                  color='pc',
-                  color_discrete_map = pc_color_map,
-                  markers=True,
-                  title='Total Healing Done Per Character Per Session')
-
-# Layout Template
+################################# Layout Template
 
 template = pn.template.FastListTemplate(
-    title="Campaign Roll Statistics", 
-    sidebar=[pn.pane.Markdown("Dashboard"), 
-             pn.pane.PNG('https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/img/thorns_logo.png', sizing_mode='scale_both'),
-             pn.pane.Markdown(f"""Party: The Rose's Thorns
-             <br/>Earliest Session Data Available: {sess_min}
-             <br/>Latest Session Data Available: {sess_max}""")
-             ],
-    main=[pn.Row(pv2_fig,pv1_fig),
-          pn.Row(pv8_fig,pv9_fig),
-          pn.Row(pv3_fig,pv10_fig),
-          pn.Row(pv11_fig,pv12_fig),
-          pn.Row(pv4_fig,pv5_fig),
-          pn.Row(pv6_fig,pv7_fig)],
-    accent_base_color="#88d8b0",
-    header_background="#88d8b0",
+    title="Rose's Thorns Roll Statistics",
+    sidebar=[
+        pn.pane.Markdown("## Dashboard"),
+        pn.pane.PNG(
+            "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/img/thorns_logo.png",
+            sizing_mode="scale_both",
+        ),
+        pn.pane.Markdown(
+            f"""Earliest Session Data Available: {sess_min}
+             <br/>Latest Session Data Available: {sess_max}"""
+        ),
+    ],
+    main=[pn.Row(party_box), pn.Row(party_combat_box)],
+    main_max_width="1000px",
+    accent=ACCENT,
+    theme_toggle=False,
 )
 template.servable()

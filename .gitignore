@@ -1,4 +1,4 @@
 .venv
 dev-*
 .ipynb_checkpoints
-
+.vscode
