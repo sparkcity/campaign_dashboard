@@ -23,7 +23,7 @@ SUCCESS_SOLID_BUTTON_STYLE = f"""
 
 pn.extension("plotly", "tabulator", sizing_mode="stretch_width")
 
-pio.renderers.default = "iframe"
+# pio.renderers.default = "iframe"
 
 pc_combat_stats_df = pd.DataFrame(
     pd.read_csv(
@@ -49,36 +49,7 @@ sess_max = (pc_rolls_df["session"].max()).item()
 
 ################################# Party Visualizations: Context and Overall Rolls
 
-select_context = pn.widgets.RadioButtonGroup(
-    name="Context Selection",
-    options=["Combat", "Exploration", "Social"],
-    value="Combat",
-    button_type="success",
-    stylesheets=[SUCCESS_SOLID_BUTTON_STYLE],
-)
-
-
-def total_contextual_fig(cntxt):
-    pv1_df = (
-        pc_rolls_df.groupby(["pc", "context"])
-        .size()
-        .unstack(fill_value=0)
-        .reset_index()
-    )
-
-    pv1_fig = px.pie(
-        pv1_df,
-        values=cntxt,
-        names="pc",
-        color="pc",
-        color_discrete_map=pc_color_map,
-        title=f"Total Campaign-wide {cntxt} Rolls Per Character",
-    )
-    pv1_fig.update_layout(autosize=True)
-    return pv1_fig
-
-
-pv2_fig = px.scatter(
+pv1_fig = px.scatter(
     pc_rolls_df,
     y="roll_total",
     x="session",
@@ -88,12 +59,24 @@ pv2_fig = px.scatter(
     hover_data=["type", "session", "pc"],
     title="All Campaign-wide Rolls Per Character",
 )
-pv2_fig.update_layout(scattermode="group", scattergap=0.50)
+pv1_fig.update_layout(scattermode="group", scattergap=0.50)
+
+pv2_df = (
+    pc_rolls_df.groupby(["pc", "context"]).size().unstack(fill_value=0).reset_index()
+)
+
+pv2_fig = px.bar(
+    pv2_df,
+    x="pc",
+    y=["Combat", "Exploration", "Social"],
+    title="Campaign-wide Rolls Per Character By Context",
+)
+pv2_fig.update_layout(autosize=True)
 
 party_box = pn.WidgetBox(
-    pn.pane.Markdown(f"# Party Visualizations"),
-    select_context,
-    pn.panel(pn.bind(total_contextual_fig, select_context), margin=(10, 2, 10, 5)),
+    pn.Column(
+        pn.Row(pn.pane.Markdown(f"# Party Visualizations")), pn.Row(pv1_fig, pv2_fig)
+    )
 )
 
 ################################# Party Visualizations: Total Combat Stats Per Character
@@ -132,12 +115,16 @@ def total_combat_stat_per_session(cntxt):
 
 
 party_combat_box = pn.WidgetBox(
-    pn.Row(pn.pane.Markdown(f"# Party Combat Visualizations")),
-    pn.Row(select_combat_stat),
-    pn.Row(
-        pn.bind(total_combat_stat, select_combat_stat),
-        pn.bind(total_combat_stat_per_session, select_combat_stat),
-    ),
+    pn.Column(
+        pn.Row(pn.pane.Markdown(f"# Party Combat Visualizations")),
+        pn.Row(select_combat_stat),
+        pn.Row(
+            pn.bind(total_combat_stat, select_combat_stat),
+            pn.bind(total_combat_stat_per_session, select_combat_stat),
+        ),
+        align="start",
+        sizing_mode="stretch_width",
+    )
 )
 
 ################################# Layout Template
