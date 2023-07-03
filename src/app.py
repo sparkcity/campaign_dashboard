@@ -75,7 +75,9 @@ pv2_fig.update_layout(autosize=True)
 
 party_box = pn.WidgetBox(
     pn.Column(
-        pn.Row(pn.pane.Markdown(f"# Party Visualizations")), pn.Row(pv1_fig, pv2_fig)
+        pn.Row(pn.pane.Markdown(f"# Party Visualizations")),
+        pn.Row(pv1_fig),
+        pn.Row(pv2_fig),
     )
 )
 
@@ -118,10 +120,8 @@ party_combat_box = pn.WidgetBox(
     pn.Column(
         pn.Row(pn.pane.Markdown(f"# Party Combat Visualizations")),
         pn.Row(select_combat_stat),
-        pn.Row(
-            pn.bind(total_combat_stat, select_combat_stat),
-            pn.bind(total_combat_stat_per_session, select_combat_stat),
-        ),
+        pn.Row(pn.bind(total_combat_stat, select_combat_stat)),
+        pn.Row(pn.bind(total_combat_stat_per_session, select_combat_stat)),
         align="start",
         sizing_mode="stretch_width",
     )
