@@ -243,7 +243,7 @@ ind_box = pn.WidgetBox(
     pn.Column(
         pn.Row(pn.pane.Markdown(f"# Individual Visualizations")),
         pn.Row(select_pc),
-        pn.Row(pn.bind(pc_sum, select_pc), pn.bind(stat_radar, select_pc)),
+        pn.Row(pn.bind(stat_radar, select_pc), pn.bind(pc_sum, select_pc)),
         pn.Row(pn.bind(attr_radar, select_pc)),
         align="start",
         sizing_mode="stretch_width",
