@@ -302,7 +302,7 @@ ind_box = pn.WidgetBox(
 ################################# Layout Template
 
 template = pn.template.FastListTemplate(
-    title="Rose's Thorns Roll Statistics",
+    title="Rose's Thorns Campaign Visualizations",
     sidebar=[
         pn.pane.Markdown("## Dashboard"),
         pn.pane.PNG(
