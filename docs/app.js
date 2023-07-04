@@ -72,16 +72,24 @@ SUCCESS_SOLID_BUTTON_STYLE = f"""
 
 pn.extension("plotly", "tabulator", sizing_mode="stretch_width")
 
-# pio.renderers.default = "iframe"
-
-pc_combat_stats_df = pd.DataFrame(
+combat_df = pd.DataFrame(
     pd.read_csv(
         "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pc_combat_stats.csv"
     )
 )
-pc_rolls_df = pd.DataFrame(
+rolls_df = pd.DataFrame(
     pd.read_csv(
         "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pc_rolls.csv"
+    )
+)
+attr_df = pd.DataFrame(
+    pd.read_csv(
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_attr.csv"
+    )
+)
+stats_df = pd.DataFrame(
+    pd.read_csv(
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pcs.csv"
     )
 )
 
@@ -93,13 +101,13 @@ pc_color_map = {
     "Trey": "#ef476f",
 }
 
-sess_min = (pc_rolls_df["session"].min()).item()
-sess_max = (pc_rolls_df["session"].max()).item()
+sess_min = (rolls_df["session"].min()).item()
+sess_max = (rolls_df["session"].max()).item()
 
 ################################# Party Visualizations: Context and Overall Rolls
 
 pv1_fig = px.scatter(
-    pc_rolls_df,
+    rolls_df,
     y="roll_total",
     x="roll_base",
     color="pc",
@@ -110,9 +118,7 @@ pv1_fig = px.scatter(
 )
 pv1_fig.update_layout(scattermode="group", scattergap=0.50)
 
-pv2_df = (
-    pc_rolls_df.groupby(["pc", "context"]).size().unstack(fill_value=0).reset_index()
-)
+pv2_df = rolls_df.groupby(["pc", "context"]).size().unstack(fill_value=0).reset_index()
 
 pv2_fig = px.bar(
     pv2_df,
@@ -140,7 +146,7 @@ select_combat_stat = pn.widgets.ToggleGroup(
 
 
 def total_combat_stat(cntxt):
-    gb = pc_combat_stats_df.groupby("pc").sum().reset_index()
+    gb = combat_df.groupby("pc").sum().reset_index()
 
     fig = px.bar(
         gb,
@@ -155,7 +161,7 @@ def total_combat_stat(cntxt):
 
 def total_combat_stat_per_session(cntxt):
     fig = px.line(
-        pc_combat_stats_df,
+        combat_df,
         x="session",
         y=cntxt,
         color="pc",
@@ -179,6 +185,119 @@ party_combat_box = pn.WidgetBox(
 
 ################################# Individual Visualizations
 
+select_pc = pn.widgets.ToggleGroup(
+    name="Combat Stat Selection",
+    options=["Sparrow", "Madaine", "Trey", "Pollux", "Evelyn"],
+    behavior="radio",
+    value="Sparrow",
+)
+
+
+def stat_radar(nm):
+    df = stats_df.loc[stats_df["pc"] == nm]
+    pc_r = [
+        df["str"].item(),
+        df["dex"].item(),
+        df["con"].item(),
+        df["int"].item(),
+        df["wis"].item(),
+        df["cha"].item(),
+    ]
+    pc_theta = ["str", "dex", "con", "int", "wis", "cha"]
+
+    fig = px.scatter_polar(df, title="Stats", r=pc_r, theta=pc_theta)
+    fig.update_traces(fill="toself")
+    return fig
+
+
+def pc_sum(nm):
+    df = stats_df.loc[stats_df["pc"] == nm]
+    c_df = combat_df.loc[combat_df["pc"] == nm]
+
+    lvl = df["lvl"].item()
+    rc = df["race"].item()
+
+    dmg_dlt = c_df["dmg_dealt"].max()
+    dmg_tkn = c_df["dmg_taken"].max()
+    dmg_mtg = c_df["dmg_mitigated"].max()
+    dmg_hld = c_df["dmg_healed"].max()
+    suc_atk = c_df["atks_success"].max()
+    spl_cst = c_df["spells_cast"].max()
+
+    pane = pn.pane.Markdown(
+        f"""# Character Highlights: {nm}
+        Level: {lvl}
+        Race: {rc}
+        Most Damage Dealt in a Combat Encounter: {dmg_dlt}
+        Most Damage Taken in a Combat Encounter: {dmg_tkn}
+        Most Damage Mitigated in a Combat Encounter: {dmg_mtg}
+        Most Healing Done in a Combat Encounter: {dmg_hld}
+        Highest Number of Successful Attacks in a Combat Encounter: {suc_atk}
+        Highest Number of Spells Cast in a Combat Encounter: {spl_cst}
+        """
+    )
+    return pane
+
+
+def attr_radar(nm):
+    df = attr_df.loc[stats_df["pc"] == nm]
+    pc_r = [
+        df["acrobatics"].item(),
+        df["animal_handling"].item(),
+        df["arcana"].item(),
+        df["athletics"].item(),
+        df["deception"].item(),
+        df["history"].item(),
+        df["insight"].item(),
+        df["intimidation"].item(),
+        df["investigation"].item(),
+        df["medicine"].item(),
+        df["nature"].item(),
+        df["perception"].item(),
+        df["performance"].item(),
+        df["persuasion"].item(),
+        df["religion"].item(),
+        df["sleight_of_hand"].item(),
+        df["stealth"].item(),
+        df["survival"].item(),
+    ]
+
+    pc_theta = [
+        "acrobatics",
+        "animal_handling",
+        "arcana",
+        "athletics",
+        "deception",
+        "history",
+        "insight",
+        "intimidation",
+        "investigation",
+        "medicine",
+        "nature",
+        "perception",
+        "performance",
+        "persuasion",
+        "religion",
+        "sleight_of_hand",
+        "stealth",
+        "survival",
+    ]
+
+    fig = px.scatter_polar(df, title="Skill Bonuses", r=pc_r, theta=pc_theta)
+    fig.update_traces(fill="toself")
+    return fig
+
+
+ind_box = pn.WidgetBox(
+    pn.Column(
+        pn.Row(pn.pane.Markdown(f"# Individual Visualizations")),
+        pn.Row(select_pc),
+        pn.Row(pn.bind(pc_sum, select_pc), pn.bind(stat_radar, select_pc)),
+        pn.Row(pn.bind(attr_radar, select_pc)),
+        align="start",
+        sizing_mode="stretch_width",
+    )
+)
 
 ################################# Layout Template
 
@@ -195,7 +314,7 @@ template = pn.template.FastListTemplate(
              <br/>Latest Session Data Available: {sess_max}"""
         ),
     ],
-    main=[pn.Row(party_box), pn.Row(party_combat_box)],
+    main=[pn.Row(party_box), pn.Row(party_combat_box), pn.Row(ind_box)],
     main_max_width="1000px",
     accent=ACCENT,
     theme_toggle=False,
