@@ -52,12 +52,12 @@ sess_max = (pc_rolls_df["session"].max()).item()
 pv1_fig = px.scatter(
     pc_rolls_df,
     y="roll_total",
-    x="session",
+    x="roll_base",
     color="pc",
     color_discrete_map=pc_color_map,
     symbol="pc",
     hover_data=["type", "session", "pc"],
-    title="All Campaign-wide Rolls Per Character",
+    title="Campaign-wide Rolls Per Character",
 )
 pv1_fig.update_layout(scattermode="group", scattergap=0.50)
 
@@ -82,9 +82,10 @@ party_box = pn.WidgetBox(
 )
 
 ################################# Party Visualizations: Total Combat Stats Per Character
-select_combat_stat = pn.widgets.Select(
+select_combat_stat = pn.widgets.ToggleGroup(
     name="Combat Stat Selection",
     options=["dmg_taken", "dmg_dealt", "dmg_mitigated", "dmg_healed"],
+    behavior="radio",
     value="dmg_taken",
 )
 
@@ -126,6 +127,9 @@ party_combat_box = pn.WidgetBox(
         sizing_mode="stretch_width",
     )
 )
+
+################################# Individual Visualizations
+
 
 ################################# Layout Template
 
