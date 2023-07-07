@@ -65,7 +65,7 @@ pv1_fig = px.scatter(
     color_discrete_map=pc_color_map,
     symbol="pc",
     hover_data=["type", "session", "pc"],
-    title="Campaign-wide Rolls Per Character",
+    title="All Rolls Per Character",
 )
 pv1_fig.update_layout(scattermode="group", scattergap=0.50)
 
@@ -75,7 +75,7 @@ pv2_fig = px.bar(
     pv2_df,
     x="pc",
     y=["Combat", "Exploration", "Social"],
-    title="Campaign-wide Rolls Per Character By Context",
+    title="All Rolls Per Character By Context",
 )
 pv2_fig.update_layout(autosize=True)
 
@@ -105,7 +105,7 @@ def total_combat_stat(cntxt):
         y=cntxt,
         color="pc",
         color_discrete_map=pc_color_map,
-        title=f"Total Campaign-wide {cntxt} Per Character",
+        title=f"Total {cntxt} Per Character",
     )
     return fig
 
@@ -168,23 +168,28 @@ def pc_sum(nm):
     lvl = df["lvl"].item()
     rc = df["race"].item()
 
-    dmg_dlt = c_df["dmg_dealt"].max()
-    dmg_tkn = c_df["dmg_taken"].max()
-    dmg_mtg = c_df["dmg_mitigated"].max()
-    dmg_hld = c_df["dmg_healed"].max()
-    suc_atk = c_df["atks_success"].max()
-    spl_cst = c_df["spells_cast"].max()
+    mx_dmg_dlt = combat_df.loc[combat_df["dmg_dealt"].idxmax()]
+    dmg_dlt = f"{mx_dmg_dlt['dmg_dealt']} damage dealt in Session {mx_dmg_dlt['session']}. </br> Combat encounter summary: {mx_dmg_dlt['combat_blurb']}"
+    mx_dmg_tkn = combat_df.loc[combat_df["dmg_taken"].idxmax()]
+    dmg_tkn = f"{mx_dmg_tkn['dmg_taken']} damage taken in Session {mx_dmg_tkn['session']}. </br> Combat encounter summary: {mx_dmg_tkn['combat_blurb']}"
+    mx_dmg_mtg = combat_df.loc[combat_df["dmg_mitigated"].idxmax()]
+    dmg_mtg = f"{mx_dmg_mtg['dmg_mitigated']} damage mitigated in Session {mx_dmg_mtg['session']}. </br> Combat encounter summary: {mx_dmg_mtg['combat_blurb']}"
+    mx_dmg_hld = combat_df.loc[combat_df["dmg_mitigated"].idxmax()]
+    dmg_hld = f"{mx_dmg_hld['dmg_healed']} damage healed in Session {mx_dmg_hld['session']}. </br> Combat encounter summary: {mx_dmg_hld['combat_blurb']}"
+    other = f"Total Successful Attacks: {c_df['atks_success'].sum()} </br> Total Failed Attacks: {c_df['atks_fail'].sum()} </br> Total Spells Cast: {c_df['spells_cast'].sum()} </br>Total Final Blows: {c_df['final_blows'].sum()}"
 
     pane = pn.pane.Markdown(
-        f"""# Character Highlights: {nm}
-        Level: {lvl}
-        Race: {rc}
-        Most Damage Dealt in a Combat Encounter: {dmg_dlt}
-        Most Damage Taken in a Combat Encounter: {dmg_tkn}
-        Most Damage Mitigated in a Combat Encounter: {dmg_mtg}
-        Most Healing Done in a Combat Encounter: {dmg_hld}
-        Highest Number of Successful Attacks in a Combat Encounter: {suc_atk}
-        Highest Number of Spells Cast in a Combat Encounter: {spl_cst}
+        f"""
+        # Character Highlights: {nm}
+        | Category      | Info |
+        | ----------- | ----------- |
+        | **Level**      | {lvl}|
+        | **Race**   | {rc}|
+        | **Most Damage Dealt** | {dmg_dlt}|
+        | **Most Damage Taken**| {dmg_tkn}|
+        | **Most Damage Mitigated**|{dmg_mtg}|
+        | **Most Damage Healed**|{dmg_hld}|
+        | **Other**| {other} |
         """
     )
     return pane
@@ -243,7 +248,7 @@ ind_box = pn.WidgetBox(
     pn.Column(
         pn.Row(pn.pane.Markdown(f"# Individual Visualizations")),
         pn.Row(select_pc),
-        pn.Row(pn.bind(stat_radar, select_pc), pn.bind(pc_sum, select_pc)),
+        pn.Row(pn.bind(pc_sum, select_pc), pn.bind(stat_radar, select_pc)),
         pn.Row(pn.bind(attr_radar, select_pc)),
         align="start",
         sizing_mode="stretch_width",
