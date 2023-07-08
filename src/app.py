@@ -25,22 +25,22 @@ pn.extension("plotly", "tabulator", sizing_mode="stretch_width")
 
 combat_df = pd.DataFrame(
     pd.read_csv(
-        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pc_combat_stats.csv"
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound/starbound_combat.csv"
     )
 )
 rolls_df = pd.DataFrame(
     pd.read_csv(
-        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pc_rolls.csv"
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound/starbound_rolls.csv"
     )
 )
 attr_df = pd.DataFrame(
     pd.read_csv(
-        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_attr.csv"
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound/starbound_attr.csv"
     )
 )
 stats_df = pd.DataFrame(
     pd.read_csv(
-        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound_pcs.csv"
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound/starbound_pcs.csv"
     )
 )
 

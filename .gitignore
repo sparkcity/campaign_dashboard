@@ -3,3 +3,4 @@ dev-*
 .ipynb_checkpoints
 .vscode
 *.xlsx
+xlsx
