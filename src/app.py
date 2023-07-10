@@ -53,10 +53,9 @@ sess_max = (rolls_df["session"].max()).item()
 
 ################################# Party Visualizations: Context and Overall Rolls
 
-party_dist_df = rolls_df["roll_base"].value_counts()
-reset_party_dist_df = party_dist_df.reset_index()
+party_dist_df = pd.DataFrame(rolls_df["roll_base"].value_counts()).reset_index()
 party_dist_fig = px.bar(
-    reset_party_dist_df,
+    party_dist_df,
     x="roll_base",
     y="count",
     color="count",
