@@ -58,17 +58,34 @@ sess_max = (rolls_df["session"].max()).item()
 
 ################################# Party Visualizations: Context and Overall Rolls
 
+##### Replace the below with the commented section in app.js
 party_dist_df = pd.DataFrame(rolls_df["roll_base"].value_counts()).reset_index()
 
 party_dist_fig = px.bar(
     party_dist_df,
-    x="index",
-    y="roll_base",
-    color="roll_base",
-    labels={"index": "roll_base", "roll_base": "count"},
+    x="roll_base",
+    y="count",
+    color="count",
     title="Party Rolls Distribution",
 )
 party_dist_fig.update_xaxes(tickmode="linear")
+
+##### For whatever reason, the following has to be uncommented manually in app.js
+##### to replace the above to work because the dataframe reset_index doesn't work properly
+##### instead of making a df with cols ['roll_base','count'],
+##### it always creates df with cols ['index' (should be roll _base),'roll_base' (should be count)]
+
+# party_dist_df = pd.DataFrame(rolls_df["roll_base"].value_counts()).reset_index()
+
+# party_dist_fig = px.bar(
+#  party_dist_df,
+#    x="index",
+#    y="roll_base",
+#    color="roll_base",
+#    labels={'index':'roll_base','roll_base':'count'},
+#    title="Party Rolls Distribution",
+# )
+# party_dist_fig.update_xaxes(tickmode="linear")
 
 party_context_df = (
     rolls_df.groupby(["pc", "context"]).size().unstack(fill_value=0).reset_index()
