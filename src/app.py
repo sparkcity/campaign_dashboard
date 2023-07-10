@@ -1,9 +1,12 @@
 ################################# Imports and Initializations
+
 import pandas as pd
+import numpy as np
 import panel as pn
 import plotly.express as px
-
-pn.extension("plotly", "tabulator", sizing_mode="stretch_width")
+import plotly.io as pio
+import plotly.graph_objects as go
+import math
 
 ACCENT = "#e56c6c"
 
@@ -18,6 +21,8 @@ SUCCESS_SOLID_BUTTON_STYLE = f"""
     background-color: var(--accent-foreground-hover, {ACCENT});
 }}
 """
+
+pn.extension("plotly", "tabulator", sizing_mode="stretch_width")
 
 combat_df = pd.DataFrame(
     pd.read_csv(
