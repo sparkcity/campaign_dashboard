@@ -62,9 +62,10 @@ party_dist_df = pd.DataFrame(rolls_df["roll_base"].value_counts()).reset_index()
 
 party_dist_fig = px.bar(
     party_dist_df,
-    x="roll_base",
-    y="count",
-    color="count",
+    x="index",
+    y="roll_base",
+    color="roll_base",
+    labels={"index": "roll_base", "roll_base": "count"},
     title="Party Rolls Distribution",
 )
 party_dist_fig.update_xaxes(tickmode="linear")
