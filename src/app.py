@@ -1,11 +1,9 @@
 ################################# Imports and Initializations
-
 import pandas as pd
-import numpy as np
 import panel as pn
 import plotly.express as px
-import plotly.io as pio
-import plotly.graph_objects as go
+
+pn.extension("plotly", "tabulator", sizing_mode="stretch_width")
 
 ACCENT = "#e56c6c"
 
@@ -20,8 +18,6 @@ SUCCESS_SOLID_BUTTON_STYLE = f"""
     background-color: var(--accent-foreground-hover, {ACCENT});
 }}
 """
-
-pn.extension("plotly", "tabulator", sizing_mode="stretch_width")
 
 combat_df = pd.DataFrame(
     pd.read_csv(
@@ -57,33 +53,32 @@ sess_max = (rolls_df["session"].max()).item()
 
 ################################# Party Visualizations: Context and Overall Rolls
 
-pv1_fig = px.scatter(
-    rolls_df,
-    y="roll_total",
+party_dist_df = rolls_df["roll_base"].value_counts().reset_index()
+party_dist_fig = px.bar(
+    party_dist_df,
     x="roll_base",
-    color="pc",
-    color_discrete_map=pc_color_map,
-    symbol="pc",
-    hover_data=["type", "session", "pc"],
-    title="All Rolls Per Character",
+    y="count",
+    color="count",
+    title="Party Rolls Distribution",
 )
-pv1_fig.update_layout(scattermode="group", scattergap=0.50)
+party_dist_fig.update_xaxes(tickmode="linear")
 
-pv2_df = rolls_df.groupby(["pc", "context"]).size().unstack(fill_value=0).reset_index()
-
-pv2_fig = px.bar(
-    pv2_df,
+party_context_df = (
+    rolls_df.groupby(["pc", "context"]).size().unstack(fill_value=0).reset_index()
+)
+party_context_fig = px.bar(
+    party_context_df,
     x="pc",
     y=["Combat", "Exploration", "Social"],
     title="All Rolls Per Character By Context",
 )
-pv2_fig.update_layout(autosize=True)
+party_context_fig.update_layout(autosize=True)
 
 party_box = pn.WidgetBox(
     pn.Column(
         pn.Row(pn.pane.Markdown(f"# Party Visualizations")),
-        pn.Row(pv1_fig),
-        pn.Row(pv2_fig),
+        pn.Row(party_dist_fig),
+        pn.Row(party_context_fig),
     )
 )
 
