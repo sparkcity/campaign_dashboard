@@ -1,7 +1,6 @@
 ################################# Imports and Initializations
 
 import pandas as pd
-import numpy as np
 import panel as pn
 import plotly.express as px
 import plotly.io as pio
