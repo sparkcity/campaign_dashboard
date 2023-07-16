@@ -189,3 +189,12 @@ Evelyn,44,Check,Exploration,Perception,null,1,11
 Madaine,44,Check,Exploration,Perception,null,14,17
 Trey,44,Check,Exploration,Perception,null,18,27
 Pollux,44,Check,Exploration,Perception,null,15,16
+Sparrow,45,Check,Exploration,Stealth,null,10,19
+Pollux,45,Check,Exploration,Stealth,null,3,15
+Sparrow,45,Check,Social,Insight,null,10,18
+Evelyn,45,Check,Social,Insight,null,7,16
+Trey,45,Check,Social,Insight,null,17,18
+Sparrow,45,Check,Social,Insight,null,19,27
+Evelyn,45,Save,Exploration,null,Dexterity,19,23
+Evelyn,45,Save,Exploration,null,Constitution,19,20
+Evelyn,45,Save,Exploration,null,Charisma,9,16
