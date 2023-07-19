@@ -133,6 +133,7 @@ def total_combat_stat_per_session(cntxt):
         color="pc",
         color_discrete_map=pc_color_map,
         markers=True,
+        hover_data=["combat_blurb"],
         title=f"{cntxt} Per Character Per Session",
     )
     return fig
