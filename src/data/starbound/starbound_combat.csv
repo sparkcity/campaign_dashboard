@@ -1,26 +1,31 @@
-﻿session,pc,level,dmg_taken,dmg_healed,dmg_dealt,dmg_mitigated,combat_id,atks_success,atks_fail,spells_cast,final_blows,combat_blurb
-41,Sparrow,9,2,0,41,23,41-1,1,1,0,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
-41,Pollux,9,0,0,0,0,41-1,0,0,2,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
-41,Madaine,9,0,0,0,0,41-1,0,0,0,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
-41,Trey,9,40,0,42,0,41-1,2,0,2,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
-41,Evelyn,9,11,12,20,0,41-1,0,2,1,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
-42,Sparrow,9,13,0,89,15,42-1,6,2,0,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
-42,Pollux,9,22,0,94,0,42-1,2,1,0,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
-42,Madaine,9,46,31,62,45,42-1,1,0,4,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
-42,Trey,9,95,10,22,0,42-1,2,0,2,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
-42,Evelyn,9,36,32,62,0,42-1,6,0,2,2,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
-43,Sparrow,9,0,0,0,0,43-0,0,0,0,0,No combat.
-43,Pollux,9,0,0,0,0,43-0,0,0,0,0,No combat.
-43,Madaine,9,0,0,0,0,43-0,0,0,0,0,No combat.
-43,Trey,9,0,0,0,0,43-0,0,0,0,0,No combat.
-43,Evelyn,9,0,0,0,0,43-0,0,0,0,0,No combat.
-44,Sparrow,9,15,0,81,17,44-1,6,0,0,0,Ruins of Archon teleportation circle against guardian statues.
-44,Pollux,9,0,8,96,0,44-1,3,0,0,1,Ruins of Archon teleportation circle against guardian statues.
-44,Madaine,9,13,0,113,45,44-1,3,0,4,0,Ruins of Archon teleportation circle against guardian statues.
-44,Trey,9,0,0,15,0,44-1,3,1,4,1,Ruins of Archon teleportation circle against guardian statues.
-44,Evelyn,9,0,0,75,0,44-1,5,2,1,0,Ruins of Archon teleportation circle against guardian statues.
-45,Sparrow,9,0,0,0,0,45-0,0,0,0,0,No combat.
-45,Pollux,9,0,0,0,0,45-0,0,0,0,0,No combat.
-45,Madaine,9,0,0,0,0,45-0,0,0,0,0,No combat.
-45,Trey,9,0,0,0,0,45-0,0,0,0,0,No combat.
-45,Evelyn,9,0,0,0,0,45-0,0,0,0,0,No combat.
+﻿session,pc,level,combat_id,dmg_taken,dmg_healed,dmg_dealt,dmg_mitigated,atks_success,atks_fail,spells_cast,final_blows,combat_blurb
+41,Sparrow,9,41-1,2,0,41,23,1,1,0,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
+41,Pollux,9,41-1,0,0,0,0,0,0,2,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
+41,Madaine,9,41-1,0,0,0,0,0,0,0,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
+41,Trey,9,41-1,40,0,42,0,2,0,2,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
+41,Evelyn,9,41-1,11,12,20,0,0,2,1,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
+42,Sparrow,9,42-1,13,0,89,15,6,2,0,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
+42,Pollux,9,42-1,22,0,94,0,2,1,0,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
+42,Madaine,9,42-1,46,31,62,45,1,0,4,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
+42,Trey,9,42-1,95,10,22,0,2,0,2,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
+42,Evelyn,9,42-1,36,32,62,0,6,0,2,2,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
+43,Sparrow,9,43-0,0,0,0,0,0,0,0,0,No combat.
+43,Pollux,9,43-0,0,0,0,0,0,0,0,0,No combat.
+43,Madaine,9,43-0,0,0,0,0,0,0,0,0,No combat.
+43,Trey,9,43-0,0,0,0,0,0,0,0,0,No combat.
+43,Evelyn,9,43-0,0,0,0,0,0,0,0,0,No combat.
+44,Sparrow,9,44-1,15,0,81,17,6,0,0,0,Ruins of Archon teleportation circle against guardian statues.
+44,Pollux,9,44-1,0,8,96,0,3,0,0,1,Ruins of Archon teleportation circle against guardian statues.
+44,Madaine,9,44-1,13,0,113,45,3,0,4,0,Ruins of Archon teleportation circle against guardian statues.
+44,Trey,9,44-1,0,0,15,0,3,1,4,1,Ruins of Archon teleportation circle against guardian statues.
+44,Evelyn,9,44-1,0,0,75,0,5,2,1,0,Ruins of Archon teleportation circle against guardian statues.
+45,Sparrow,9,45-0,0,0,0,0,0,0,0,0,No combat.
+45,Pollux,9,45-0,0,0,0,0,0,0,0,0,No combat.
+45,Madaine,9,45-0,0,0,0,0,0,0,0,0,No combat.
+45,Trey,9,45-0,0,0,0,0,0,0,0,0,No combat.
+45,Evelyn,9,45-0,0,0,0,0,0,0,0,0,No combat.
+46,Sparrow,10,46-1,52,0,29,18,4,0,0,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways."
+46,Pollux,10,46-1,15,7,36,0,1,1,1,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways."
+46,Madaine,10,46-1,64,0,0,40,0,0,1,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways."
+46,Trey,10,46-1,13,0,0,0,0,0,1,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways."
+46,Evelyn,10,46-1,60,17,18,0,2,0,0,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways."
