@@ -3,5 +3,4 @@ jupyterlab
 openpyxl
 pyparsing
 pandas
-python
 plotly
