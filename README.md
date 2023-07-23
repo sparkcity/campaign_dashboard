@@ -2,10 +2,9 @@
 
 ![Python Badge](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) ![Jupyter Badge](https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white)
 
-## Live Demos
+## Live
 
 - Static Github Pages Demo: https://sparkcity.github.io/campaign_dashboard/app.html
-- Full Heroku Deployment: https://campaign-dashboard-5fce31c398a9.herokuapp.com/
 
 A dashboard webapp built to display data visualizations related to the ongoing Dungeons & Dragons campaign I play in with my friends.
 
