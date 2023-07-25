@@ -14,4 +14,4 @@ COPY . ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the web service on container startup. 
-CMD panel serve src\campaign_dashboard\starbound_dashboard.py src\campaign_dashboard\atlas_dashboard.py --address 0.0.0.0 --port 8080 --allow-websocket-origin="*" 
+CMD panel serve src/campaign_dashboard/starbound_dashboard.py src/campaign_dashboard/atlas_dashboard.py --address 0.0.0.0 --port 8080 --allow-websocket-origin="*" 
