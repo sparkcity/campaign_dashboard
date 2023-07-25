@@ -5,6 +5,7 @@
 ## Live
 
 - Static Github Pages Demo: https://sparkcity.github.io/campaign_dashboard/app.html
+- gcloud: https://campaigndashboard-mnddwotdkq-uk.a.run.app/
 
 A dashboard webapp built to display data visualizations related to the ongoing Dungeons & Dragons campaign I play in with my friends.
 
