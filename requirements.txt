@@ -1,6 +1,3 @@
 hvplot
-jupyterlab
-openpyxl
-pyparsing
 pandas
 plotly
