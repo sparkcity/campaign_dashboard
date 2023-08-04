@@ -190,3 +190,41 @@ session,pc,type,context,skill_check,ability_save,roll_dice,roll_total
 19,Luomus,Check,Exploration,Stealth,null,10,18
 19,Luomus,Save,Combat,null,Constitution,4,12
 19,Luomus,Check,Exploration,Investigation,null,13,14
+20,Romare,Check,Social,Persuasion,null,3,6
+20,Victoria,Check,Social,Intimidation,null,13,16
+20,Victoria,Check,Social,Insight,null,7,8
+20,Romare,Check,Social,Insight,null,11,19
+20,Luomus,Check,Social,Insight,null,12,17
+20,Romare,Check,Social,Insight,null,6,14
+20,Luomus,Check,Social,Insight,null,13,18
+20,Barbara,Check,Social,Insight,null,12,21
+20,Barbara,Check,Social,Athletics,null,4,12
+20,Barbara,Check,Social,Athletics,null,19,27
+20,Barbara,Check,Social,Athletics,null,7,15
+20,Fluke,Check,Social,Athletics,null,20,20
+20,Barbara,Check,Social,Persuasion,null,2,2
+20,Fluke,Check,Social,Insight,null,4,4
+20,Fluke,Check,Social,Acrobatics,null,6,8
+20,Barbara,Check,Social,Athletics,null,17,25
+20,Luomus,Check,Social,Athletics,null,2,2
+20,Fluke,Save,Exploration,null,Wisdom,2,2
+20,Romare,Check,Social,Insight,null,11,19
+20,Fluke,Check,Social,Sleight of Hand,null,13,21
+20,Luomus,Check,Exploration,Investigation,null,4,5
+20,Fluke,Check,Exploration,Sleight of Hand,null,13,18
+20,Fluke,Check,Social,null,Charisma,11,16
+20,Luomus,Save,Exploration,null,Dexterity,11,17
+20,Romare,Save,Exploration,null,Dexterity,19,22
+20,Victoria,Check,Exploration,Investigation,null,2,6
+20,Fluke,Check,Exploration,Sleight of Hand,null,4,12
+20,Luomus,Save,Combat,null,Wisdom,1,4
+20,Luomus,Save,Combat,null,Wisdom,20,23
+20,Victoria,Save,Combat,null,Wisdom,20,24
+20,Luomus,Save,Combat,null,Constitution,2,10
+20,Victoria,Check,Exploration,Investigation,null,3,7
+20,Luomus,Save,Exploration,null,Constitution,10,18
+20,Fluke,Save,Exploration,null,Constitution,15,21
+20,Victoria,Save,Exploration,null,Constitution,6,8
+20,Romare,Save,Exploration,null,Constitution,15,17
+20,Barbara,Check,Exploration,Medicine,null,5,6
+20,Victoria,Check,Combat,Medicine,null,20,24

@@ -22,31 +22,32 @@ pn.extension("plotly", "tabulator", sizing_mode="stretch_width")
 
 combat_df = pd.DataFrame(
     pd.read_csv(
-        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound/starbound_combat.csv"
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/protea/protea_combat.csv"
     )
 )
 rolls_df = pd.DataFrame(
     pd.read_csv(
-        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound/starbound_rolls.csv"
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/protea/protea_rolls.csv"
     )
 )
 attr_df = pd.DataFrame(
     pd.read_csv(
-        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound/starbound_attr.csv"
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/protea/protea_attr.csv"
     )
 )
 stats_df = pd.DataFrame(
     pd.read_csv(
-        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/starbound/starbound_pcs.csv"
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/protea/protea_pcs.csv"
     )
 )
 
 pc_color_map = {
-    "Sparrow": "#118ab2",
-    "Madaine": "#073b4c",
-    "Evelyn": "#06d6a0",
-    "Pollux": "#ffd166",
-    "Trey": "#ef476f",
+    "Kara": "#acd4d6",
+    "Victoria": "#a73aae",
+    "Fluke": "#7deae6",
+    "Romare": "#ffd166",
+    "Luomus": "#d53131",
+    "Barbara": "#29aa64",
 }
 
 sess_min = (rolls_df["session"].min()).item()
@@ -154,9 +155,9 @@ party_combat_box = pn.WidgetBox(
 
 select_pc = pn.widgets.ToggleGroup(
     name="Combat Stat Selection",
-    options=["Sparrow", "Madaine", "Trey", "Pollux", "Evelyn"],
+    options=["Victoria", "Fluke", "Barbara", "Luomus", "Romare", "Kara"],
     behavior="radio",
-    value="Sparrow",
+    value="Victoria",
 )
 
 
