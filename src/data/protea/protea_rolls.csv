@@ -144,9 +144,9 @@ session,pc,type,context,skill_check,ability_save,roll_base,roll_total
 18,Romare,Save,Combat,null,Constitution,1,3
 18,Fluke,Attack,Combat,null,null,18,27
 18,Fluke,Attack,Combat,null,null,9,18
-18,Luomus,Attack,Combat,null,null,28,26
+18,Luomus,Attack,Combat,null,null,18,26
 18,Luomus,Attack,Combat,null,null,12,20
-18,Luomus,Attack,Combat,null,null,27,25
+18,Luomus,Attack,Combat,null,null,17,25
 18,Victoria,Attack,Combat,null,null,5,12
 18,Romare,Attack,Combat,null,null,5,13
 18,Fluke,Attack,Combat,null,null,4,14
