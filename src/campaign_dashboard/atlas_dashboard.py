@@ -41,6 +41,12 @@ stats_df = pd.DataFrame(
     )
 )
 
+timeline_df = pd.DataFrame(
+    pd.read_csv(
+        "https://raw.githubusercontent.com/sparkcity/campaign_dashboard/main/src/data/protea/atlas_timeline.csv"
+    )
+)
+
 pc_color_map = {
     "Kara": "#acd4d6",
     "Victoria": "#a73aae",
@@ -100,6 +106,28 @@ party_box = pn.WidgetBox(
         pn.Row(pn.pane.Markdown(f"# Party Visualizations")),
         pn.Row(party_dist_fig),
         pn.Row(party_context_fig),
+    )
+)
+################################# Timeline Visualization
+
+
+def timeline_vis():
+    fig = px.line(
+        timeline_df,
+        x="year.month",
+        y="timeline_id",
+        color="topic",
+        markers=True,
+        hover_data=["topic", "event"],
+        title="World Timeline",
+    )
+    return fig
+
+
+timeline_box = pn.WidgetBox(
+    pn.Column(
+        pn.Row(pn.pane.Markdown(f"# Timeline Visualizations")),
+        pn.Row(timeline_vis),
     )
 )
 
@@ -293,7 +321,12 @@ template = pn.template.FastListTemplate(
              <br/>Latest Session Data Available: {sess_max}"""
         ),
     ],
-    main=[pn.Row(party_box), pn.Row(party_combat_box), pn.Row(ind_box)],
+    main=[
+        pn.Row(timeline_box),
+        pn.Row(party_box),
+        pn.Row(party_combat_box),
+        pn.Row(ind_box),
+    ],
     main_max_width="1000px",
     accent=ACCENT,
     theme_toggle=False,
