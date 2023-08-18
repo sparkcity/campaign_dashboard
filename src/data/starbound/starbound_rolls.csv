@@ -381,3 +381,42 @@ Sparrow,48,Check,Social,Insight,null,17,26
 Sparrow,48,Check,Social,Insight,null,11,20
 Madaine,48,Check,Social,Deception,null,14,27
 Trey,48,Check,Social,Medicine,null,19,20
+Sparrow,49,Check,Exploration,Investigation,null,2,3
+Madaine,49,Check,Social,Deception,null,7,20
+Pollux,49,Save,Exploration,null,Charisma,10,11
+Sparrow,49,Save,Exploration,null,Charisma,14,20
+Tribus,49,Save,Exploration,null,Charisma,12,27
+Trey,49,Save,Exploration,null,Charisma,4,18
+Madaine,49,Save,Exploration,null,Charisma,8,22
+Madaine,49,Check,Social,Insight,null,1,4
+Tribus,49,Check,Social,Persuasion,null,19,28
+Tribus,49,Check,Social,Sleight of Hand,null,19,20
+Trey,49,Check,Social,Sleight of Hand,null,16,19
+Pollux,49,Check,Social,Sleight of Hand,null,8,21
+Pollux,49,Check,Social,Sleight of Hand,null,2,15
+Evelyn,50,Check,Social,Insight,null,1,10
+Evelyn,50,Check,Social,Insight,null,1,10
+Evelyn,50,Check,Social,Insight,null,2,11
+Madaine,50,Save,Exploration,null,Intelligence,13,25
+Evelyn,50,Save,Exploration,null,Dexterity,4,7
+Evelyn,50,Save,Exploration,null,Dexterity,18,20
+Madaine,50,Save,Exploration,null,Constitution,5,10
+Trey,50,Save,Exploration,null,Constitution,14,21
+Madaine,50,Save,Exploration,null,Constitution,6,11
+Trey,50,Save,Exploration,Survival,null,11,14
+Pollux,50,Save,Exploration,null,Dexterity,1,10
+Pollux,50,Save,Exploration,null,Dexterity,2,14
+Sparrow,50,Save,Exploration,null,Wisdom,16,21
+Pollux,50,Save,Exploration,null,Wisdom,18,19
+Evelyn,50,Save,Exploration,null,Wisdom,11,20
+Madaine,50,Save,Exploration,null,Wisdom,17,19
+Trey,50,Save,Exploration,null,Wisdom,16,17
+Evelyn,50,Save,Exploration,null,Dexterity,10,12
+Evelyn,51,Save,Exploration,null,Dexterity,10,12
+Evelyn,52,Save,Exploration,null,Dexterity,5,7
+Sparrow,50,Save,Exploration,null,Wisdom,8,13
+Madaine,50,Save,Exploration,null,Wisdom,11,13
+Pollux,50,Save,Exploration,null,Wisdom,9,10
+Evelyn,50,Save,Exploration,null,Wisdom,9,18
+Trey,50,Save,Exploration,null,Wisdom,7,8
+Sparrow,50,Save,Exploration,null,Wisdom,20,25
