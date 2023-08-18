@@ -111,23 +111,19 @@ party_box = pn.WidgetBox(
 ################################# Timeline Visualization
 
 
-def timeline_vis():
-    fig = px.line(
-        timeline_df,
-        x="year.month",
-        y="timeline_id",
-        color="topic",
-        markers=True,
-        hover_data=["topic", "event"],
-        title="World Timeline",
-    )
-    return fig
-
+timeline_vis = px.line(
+    timeline_df,
+    x="year.month",
+    y="timeline_id",
+    color="topic",
+    markers=True,
+    hover_data=["topic", "event"],
+    title="World Timeline",
+)
 
 timeline_box = pn.WidgetBox(
     pn.Column(
-        pn.Row(pn.pane.Markdown(f"# Timeline Visualizations")),
-        pn.Row(timeline_vis),
+        pn.Row(pn.pane.Markdown(f"# Timeline Visualizations")), pn.Row(timeline_vis)
     )
 )
 
@@ -322,10 +318,10 @@ template = pn.template.FastListTemplate(
         ),
     ],
     main=[
-        pn.Row(timeline_box),
         pn.Row(party_box),
         pn.Row(party_combat_box),
         pn.Row(ind_box),
+        pn.Row(timeline_box),
     ],
     main_max_width="1000px",
     accent=ACCENT,
