@@ -321,7 +321,7 @@ template = pn.template.FastListTemplate(
         pn.Row(party_box),
         pn.Row(party_combat_box),
         pn.Row(ind_box),
-        #        pn.Row(timeline_box),
+        pn.Row(timeline_box),
     ],
     main_max_width="1000px",
     accent=ACCENT,
