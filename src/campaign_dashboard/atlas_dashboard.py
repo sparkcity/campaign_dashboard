@@ -81,11 +81,11 @@ party_dist_fig.update_xaxes(tickmode="linear")
 # party_dist_df = pd.DataFrame(rolls_df["roll_base"].value_counts()).reset_index()
 
 # party_dist_fig = px.bar(
-#  party_dist_df,
+#    party_dist_df,
 #    x="index",
 #    y="roll_base",
 #    color="roll_base",
-#    labels={'index':'roll_base','roll_base':'count'},
+#    labels={"index": "roll_base", "roll_base": "count"},
 #    title="Party Rolls Distribution",
 # )
 # party_dist_fig.update_xaxes(tickmode="linear")
@@ -321,7 +321,7 @@ template = pn.template.FastListTemplate(
         pn.Row(party_box),
         pn.Row(party_combat_box),
         pn.Row(ind_box),
-        pn.Row(timeline_box),
+        #        pn.Row(timeline_box),
     ],
     main_max_width="1000px",
     accent=ACCENT,
