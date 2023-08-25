@@ -1,61 +1,71 @@
-﻿session,pc,level,combat_id,dmg_taken,dmg_healed,dmg_dealt,dmg_mitigated,atks_success,atks_fail,spells_cast,final_blows,combat_blurb
-41,Sparrow,9,41-1,2,0,41,23,1,1,0,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
-41,Pollux,9,41-1,0,0,0,0,0,0,2,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
-41,Madaine,9,41-1,0,0,0,0,0,0,0,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
-41,Trey,9,41-1,40,0,42,0,2,0,2,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
-41,Evelyn,9,41-1,11,12,20,0,0,2,1,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.
-42,Sparrow,9,42-1,13,0,89,15,6,2,0,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
-42,Pollux,9,42-1,22,0,94,0,2,1,0,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
-42,Madaine,9,42-1,46,31,62,45,1,0,4,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
-42,Trey,9,42-1,95,10,22,0,2,0,2,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
-42,Evelyn,9,42-1,36,32,62,0,6,0,2,2,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.
-43,Sparrow,9,43-0,0,0,0,0,0,0,0,0,No combat.
-43,Pollux,9,43-0,0,0,0,0,0,0,0,0,No combat.
-43,Madaine,9,43-0,0,0,0,0,0,0,0,0,No combat.
-43,Trey,9,43-0,0,0,0,0,0,0,0,0,No combat.
-43,Evelyn,9,43-0,0,0,0,0,0,0,0,0,No combat.
-44,Sparrow,9,44-1,15,0,81,17,6,0,0,0,Ruins of Archon teleportation circle against guardian statues.
-44,Pollux,9,44-1,0,8,96,0,3,0,0,1,Ruins of Archon teleportation circle against guardian statues.
-44,Madaine,9,44-1,13,0,113,45,3,0,4,0,Ruins of Archon teleportation circle against guardian statues.
-44,Trey,9,44-1,0,0,15,0,3,1,4,1,Ruins of Archon teleportation circle against guardian statues.
-44,Evelyn,9,44-1,0,0,75,0,5,2,1,0,Ruins of Archon teleportation circle against guardian statues.
-45,Sparrow,9,45-0,0,0,0,0,0,0,0,0,No combat.
-45,Pollux,9,45-0,0,0,0,0,0,0,0,0,No combat.
-45,Madaine,9,45-0,0,0,0,0,0,0,0,0,No combat.
-45,Trey,9,45-0,0,0,0,0,0,0,0,0,No combat.
-45,Evelyn,9,45-0,0,0,0,0,0,0,0,0,No combat.
-46,Sparrow,10,46-1,52,0,29,18,4,0,0,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways."
-46,Pollux,10,46-1,15,7,36,0,1,1,1,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways."
-46,Madaine,10,46-1,64,0,0,40,0,0,1,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways."
-46,Trey,10,46-1,13,0,0,0,0,0,1,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways."
-46,Evelyn,10,46-1,60,17,18,0,2,0,0,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways."
-47,Sparrow,10,47-1,0,0,116,0,4,0,0,0,Continued from 46-1. Woe Strider and others in the Lost Highways.
-47,Pollux,10,47-1,55,26,4,0,1,0,0,0,Continued from 46-1. Woe Strider and others in the Lost Highways.
-47,Madaine,10,47-1,27,21,0,0,0,0,1,0,Continued from 46-1. Woe Strider and others in the Lost Highways.
-47,Trey,10,47-1,17,0,26,0,3,0,3,1,Continued from 46-1. Woe Strider and others in the Lost Highways.
-47,Evelyn,10,47-1,71,0,55,0,3,1,0,1,Continued from 46-1. Woe Strider and others in the Lost Highways.
-47,Tribus,10,47-1,27,33,270,0,7,0,0,0,Continued from 46-1. Woe Strider and others in the Lost Highways.
-47,Sparrow,10,47-2,32,0,33,18,2,1,0,0,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways."
-47,Pollux,10,47-2,67,0,98,0,1,0,0,0,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways."
-47,Madaine,10,47-2,25,0,69,60,0,0,1,0,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways."
-47,Trey,10,47-2,23,0,108,0,4,1,4,1,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways."
-47,Evelyn,10,47-2,95,0,19,0,2,0,0,1,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways."
-47,Tribus,10,47-2,24,0,84,0,0,0,0,0,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways."
-48,Sparrow,10,48-1,0,0,56,0,3,1,0,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.
-48,Pollux,10,48-1,15,0,53,0,2,0,0,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.
-48,Madaine,10,48-1,0,0,0,60,0,0,4,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.
-48,Trey,10,48-1,0,0,0,0,0,0,4,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.
-48,Evelyn,10,48-1,0,0,56,0,1,0,1,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.
-48,Tribus,10,48-1,14,0,0,0,0,0,1,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.
-49,Sparrow,10,49-0,0,0,0,0,0,0,0,0,No combat.
-49,Pollux,10,49-0,0,0,0,0,0,0,0,0,No combat.
-49,Madaine,10,49-0,0,0,0,0,0,0,0,0,No combat.
-49,Trey,10,49-0,0,0,0,0,0,0,0,0,No combat.
-49,Evelyn,10,49-0,0,0,0,0,0,0,0,0,No combat.
-49,Tribus,10,49-0,0,0,0,0,0,0,0,0,No combat.
-50,Sparrow,10,50-0,0,0,0,0,0,0,0,0,No combat.
-50,Pollux,10,50-0,0,0,0,0,0,0,0,0,No combat.
-50,Madaine,10,50-0,0,0,0,0,0,0,0,0,No combat.
-50,Trey,10,50-0,0,0,0,0,0,0,0,0,No combat.
-50,Evelyn,10,50-0,0,0,0,0,0,0,0,0,No combat.
-50,Tribus,10,50-0,0,0,0,0,0,0,0,0,No combat.
+﻿session,pc,level,combat_id,dmg_taken,dmg_healed,dmg_dealt,dmg_mitigated,atks_success,atks_fail,spells_cast,final_blows,combat_blurb,,,,,
+41,Sparrow,9,41-1,2,0,41,23,1,1,0,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.,,,,,
+41,Pollux,9,41-1,0,0,0,0,0,0,2,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.,,,,,
+41,Madaine,9,41-1,0,0,0,0,0,0,0,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.,,,,,
+41,Trey,9,41-1,40,0,42,0,2,0,2,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.,,,,,
+41,Evelyn,9,41-1,11,12,20,0,0,2,1,0,Sparrow punches plague maiden masquerading as an old lady at the Bastion.,,,,,
+42,Sparrow,9,42-1,13,0,89,15,6,2,0,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.,,,,,
+42,Pollux,9,42-1,22,0,94,0,2,1,0,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.,,,,,
+42,Madaine,9,42-1,46,31,62,45,1,0,4,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.,,,,,
+42,Trey,9,42-1,95,10,22,0,2,0,2,0,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.,,,,,
+42,Evelyn,9,42-1,36,32,62,0,6,0,2,2,Continued from 41-1. Thorns vs Plague Maiden. Evie bloodlusted at end.,,,,,
+43,Sparrow,9,43-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+43,Pollux,9,43-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+43,Madaine,9,43-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+43,Trey,9,43-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+43,Evelyn,9,43-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+44,Sparrow,9,44-1,15,0,81,17,6,0,0,0,Ruins of Archon teleportation circle against guardian statues.,,,,,
+44,Pollux,9,44-1,0,8,96,0,3,0,0,1,Ruins of Archon teleportation circle against guardian statues.,,,,,
+44,Madaine,9,44-1,13,0,113,45,3,0,4,0,Ruins of Archon teleportation circle against guardian statues.,,,,,
+44,Trey,9,44-1,0,0,15,0,3,1,4,1,Ruins of Archon teleportation circle against guardian statues.,,,,,
+44,Evelyn,9,44-1,0,0,75,0,5,2,1,0,Ruins of Archon teleportation circle against guardian statues.,,,,,
+45,Sparrow,9,45-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+45,Pollux,9,45-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+45,Madaine,9,45-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+45,Trey,9,45-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+45,Evelyn,9,45-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+46,Sparrow,10,46-1,52,0,29,18,4,0,0,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways.",,,,,
+46,Pollux,10,46-1,15,7,36,0,1,1,1,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways.",,,,,
+46,Madaine,10,46-1,64,0,0,40,0,0,1,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways.",,,,,
+46,Trey,10,46-1,13,0,0,0,0,0,1,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways.",,,,,
+46,Evelyn,10,46-1,60,17,18,0,2,0,0,0,"The Whistler, Woe Strider, Shadow Horror, and cranium rats in the Lost Highways.",,,,,
+47,Sparrow,10,47-1,0,0,116,0,4,0,0,0,Continued from 46-1. Woe Strider and others in the Lost Highways.,,,,,
+47,Pollux,10,47-1,55,26,4,0,1,0,0,0,Continued from 46-1. Woe Strider and others in the Lost Highways.,,,,,
+47,Madaine,10,47-1,27,21,0,0,0,0,1,0,Continued from 46-1. Woe Strider and others in the Lost Highways.,,,,,
+47,Trey,10,47-1,17,0,26,0,3,0,3,1,Continued from 46-1. Woe Strider and others in the Lost Highways.,,,,,
+47,Evelyn,10,47-1,71,0,55,0,3,1,0,1,Continued from 46-1. Woe Strider and others in the Lost Highways.,,,,,
+47,Tribus,10,47-1,27,33,270,0,7,0,0,0,Continued from 46-1. Woe Strider and others in the Lost Highways.,,,,,
+47,Sparrow,10,47-2,32,0,33,18,2,1,0,0,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways.",,,,,
+47,Pollux,10,47-2,67,0,98,0,1,0,0,0,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways.",,,,,
+47,Madaine,10,47-2,25,0,69,60,0,0,1,0,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways.",,,,,
+47,Trey,10,47-2,23,0,108,0,4,1,4,1,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways.",,,,,
+47,Evelyn,10,47-2,95,0,19,0,2,0,0,1,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways.",,,,,
+47,Tribus,10,47-2,24,0,84,0,0,0,0,0,"Twisted, malformed Arconians at the Forbidden Entrance in the Lost Highways.",,,,,
+48,Sparrow,10,48-1,0,0,56,0,3,1,0,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.,,,,,
+48,Pollux,10,48-1,15,0,53,0,2,0,0,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.,,,,,
+48,Madaine,10,48-1,0,0,0,60,0,0,4,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.,,,,,
+48,Trey,10,48-1,0,0,0,0,0,0,4,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.,,,,,
+48,Evelyn,10,48-1,0,0,56,0,1,0,1,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.,,,,,
+48,Tribus,10,48-1,14,0,0,0,0,0,1,0,Eku the Couatl leads the Thorns to the Archaic at the end of the Lost Highways. Evie is blessed by Selune which halts the battle.,,,,,
+49,Sparrow,10,49-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+49,Pollux,10,49-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+49,Madaine,10,49-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+49,Trey,10,49-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+49,Evelyn,10,49-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+49,Tribus,10,49-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+50,Sparrow,10,50-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+50,Pollux,10,50-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+50,Madaine,10,50-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+50,Trey,10,50-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+50,Evelyn,10,50-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+50,Tribus,10,50-0,0,0,0,0,0,0,0,0,No combat.,,,,,
+51,Sparrow,10,51-1,156,0,377,0,10,1,0,2,"Giant Skeletons attack by the gargantuan swamp tree in the Lands Beyond. Undead Ancient Bronze Dragon almost causes TPK. Deus Elf Machina'd by Sparrow's Monk Master, Master Sondra.",,,,,
+51,Pollux,10,51-1,154,18,113,0,4,0,0,1,"Giant Skeletons attack by the gargantuan swamp tree in the Lands Beyond. Undead Ancient Bronze Dragon almost causes TPK. Deus Elf Machina'd by Sparrow's Monk Master, Master Sondra.",,,,,
+51,Madaine,10,51-1,272,17,0,50,0,0,5,0,"Giant Skeletons attack by the gargantuan swamp tree in the Lands Beyond. Undead Ancient Bronze Dragon almost causes TPK. Deus Elf Machina'd by Sparrow's Monk Master, Master Sondra.",,,,,
+51,Trey,10,51-1,248,0,124,164,0,0,6,0,"Giant Skeletons attack by the gargantuan swamp tree in the Lands Beyond. Undead Ancient Bronze Dragon almost causes TPK. Deus Elf Machina'd by Sparrow's Monk Master, Master Sondra.",,,,,
+51,Evelyn,10,51-1,195,265,38,36,2,0,3,1,"Giant Skeletons attack by the gargantuan swamp tree in the Lands Beyond. Undead Ancient Bronze Dragon almost causes TPK. Deus Elf Machina'd by Sparrow's Monk Master, Master Sondra.",,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
