@@ -412,8 +412,8 @@ Evelyn,50,Save,Exploration,null,Wisdom,11,20
 Madaine,50,Save,Exploration,null,Wisdom,17,19
 Trey,50,Save,Exploration,null,Wisdom,16,17
 Evelyn,50,Save,Exploration,null,Dexterity,10,12
-Evelyn,51,Save,Exploration,null,Dexterity,10,12
-Evelyn,52,Save,Exploration,null,Dexterity,5,7
+Evelyn,50,Save,Exploration,null,Dexterity,10,12
+Evelyn,50,Save,Exploration,null,Dexterity,5,7
 Sparrow,50,Save,Exploration,null,Wisdom,8,13
 Madaine,50,Save,Exploration,null,Wisdom,11,13
 Pollux,50,Save,Exploration,null,Wisdom,9,10
@@ -437,7 +437,7 @@ Pollux,51,Save,Combat,null,Strength,1,2
 Pollux,51,Attack,Combat,null,null,7,16
 Pollux,51,Check,Combat,Stealth,null,2,15
 Sparrow,51,Attack,Combat,null,null,4,13
-Sparrow,52,Attack,Combat,null,null,8,25
+Sparrow,51,Attack,Combat,null,null,8,25
 Trey,51,Save,Combat,null,Dexterity,5,8
 Madaine,51,Save,Combat,null,Dexterity,6,13
 Sparrow,51,Save,Combat,null,Constitution,12,15
